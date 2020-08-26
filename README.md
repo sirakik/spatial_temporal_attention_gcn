@@ -1,6 +1,6 @@
 # データセットの準備
 
-###ダウンロード  
+### ダウンロード  
 - [NTU-RGB+D60](http://rose1.ntu.edu.sg/datasets/actionrecognition.asp)    
 3D skeletons (body joints)のみ必要  
 データセットを使う場合は申請が必要ですが,　skeleton dataのみは[Github](https://github.com/shahroudy/NTURGB-D)で公開中. 
@@ -13,7 +13,7 @@ NTU-RGB+Dと同様にskeleton dataのみは[Github](https://github.com/shahroudy
     find ntu-rgb+d-skeletons60/ -name "*.skeleton" -print0 | xargs -0 -I {} mv {} ntu-rgb+d-skeletons120/
     ```
 
-###train, testに分割 
+### train, testに分割 
 各プログラムには変数`origin_path`(ダウンロードしてきたデータのパス)があるので, 適宜変更  
 - NTU-RGB+D60  
 ```python Tools/Gen_dataset/ntu60.py```  
@@ -21,7 +21,7 @@ NTU-RGB+Dと同様にskeleton dataのみは[Github](https://github.com/shahroudy
 - NTU-RGB+D120  
 ```python Tools/Gen_dataset/ntu120.py```  
 
-###マルチモーダルのデータを生成
+### マルチモーダルのデータを生成
 - NTU-RGB+D60  
 ```python Tools/Gen_dataset/multi_modal.py --dataset ntu60```  
 
@@ -30,7 +30,7 @@ NTU-RGB+Dと同様にskeleton dataのみは[Github](https://github.com/shahroudy
 
 
 
-#学習
+# 学習
 - 学習やモデルのパラメータはconfigファイルに記述しています．  
   `Tools/Config`下にデータセットごとにconfigファイルを置いてあります．  
   configファイルを編集することで設定を変更できます.  主な変更箇所を挙げます.  
@@ -61,7 +61,7 @@ NTU-RGB+Dと同様にskeleton dataのみは[Github](https://github.com/shahroudy
           `--config Tools/Config/NTU-RGB+D120/xsetup/velocity.yaml`
        
           
-#評価
+# 評価
 - 学習したモデルを用いて評価を行います. 学習と同様のconfigファイルを読み込みます.
     - NTU-RGB+D60のxsubのcoordinate(joint coordinate, bone)データでテスト
     ```
@@ -84,8 +84,10 @@ NTU-RGB+Dと同様にskeleton dataのみは[Github](https://github.com/shahroudy
         ```
         python test.py --config Tools/Config/NTU-RGB+D60/xsub/coordinate.yaml --visualize
         ```
+  
+  
         
-#Mechanics-stream構造  
+# Mechanics-stream構造  
 - `test.py`を動かすことで各logディレクトリに`test_score.pkl`が生成されています.   
   `test_score.pkl`を読み込んで，クラス確率の合計値を最終の推論値とさせます.    
   ``` 
