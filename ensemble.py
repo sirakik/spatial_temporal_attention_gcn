@@ -38,7 +38,6 @@ if args.score3 is not None:
     s3 = open(s3_path, 'rb')
     s3 = list(pickle.load(s3).items())
 
-
 # main process
 right_num = total_num = right_num_5 = 0
 for i in tqdm(range(len(label[0]))):

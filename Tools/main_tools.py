@@ -66,7 +66,6 @@ def load_optimizer(optimizer_args, model, momentum=0.9, nesterov=True, weight_de
 
     return optimizer
 
-
 def print_log(input, log_dir, print_tf=True, log_tf=True):
     if print_tf:
         print(input)
@@ -74,14 +73,12 @@ def print_log(input, log_dir, print_tf=True, log_tf=True):
         with open('{}/log.txt'.format(log_dir), 'a') as f:
             f.write(input+'\n')
 
-
 def header_print(log_dir):
     print_log(
         '# -------------------------------------------------------------------------------------------------------------------------------\n'
         '# | epoch |:|train|:| mean loss | accuracy[AB] | accuracy[PB] |:|test|:| mean loss | accuracy[AB] | accuracy[PB] |:| current- |:|\n'
         '# -------------------------------------------------------------------------------------------------------------------------------',
         log_dir)
-
 
 def result_print(epoch, log_dir, train_mean_loss, train_accuracy_ab, train_accuracy_pb, test_mean_loss,
                  test_accuracy_ab, test_accuracy_pb):

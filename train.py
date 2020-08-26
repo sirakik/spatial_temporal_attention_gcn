@@ -6,8 +6,6 @@ import random
 import argparse
 import numpy as np
 from tqdm import tqdm
-
-# pytorch 0.4.1
 import torch
 
 import Tools.main_tools as main_tools
