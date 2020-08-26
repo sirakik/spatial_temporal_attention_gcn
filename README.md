@@ -57,7 +57,7 @@ NTU-RGB+Dと同様にskeleton dataのみは[Github](https://github.com/shahroudy
     - 例:  
         - NTU-RGB+D60のxviewのcoordinateデータ  
           `--config Tools/Config/NTU-RGB+D60/xview/coordinate.yaml`
-        - NTU-RGB+D120のxsetupのvelocityデータ
+        - NTU-RGB+D120のxsetupのvelocityデータ  
           `--config Tools/Config/NTU-RGB+D120/xsetup/velocity.yaml`
        
           
