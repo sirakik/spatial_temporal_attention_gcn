@@ -1,3 +1,5 @@
+これ以降の更新は[SpatialTemporalAttentionGCN](https://github.com/machine-perception-robotics-group/SpatialTemporalAttentionGCN)で行います.
+
 ## Requirement
 - pytorch  1.0.1
 
